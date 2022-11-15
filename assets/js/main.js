@@ -4,54 +4,6 @@ window.addEventListener('load', function () {
 
 	let cart = [];
 	const containerShoses = document.querySelector('.shop-items');
-
-
-
-	//begin show shose
-	// const renderItemShose = (item)=>{
-	// 	let templteShose = `
-	// 	<div class="shop-item">
-	// 		<div class="shop-item-image" style="background-color: ${item.color}">
-	// 			<img
-	// 				src="${item.image}"
-	// 				alt="">
-	// 		</div>
-	// 		<div class="shop-item-name">
-	// 			${item.name}
-	// 		</div>
-	// 		<div class="shop-item-description">
-	// 			${item.description}
-	// 		</div>
-	// 		<div class="shop-item-bottom">
-	// 			<div class="shop-item-price">
-	// 				$ ${item.price}
-	// 			</div>
-	// 			<div data-id="${item.id}" class="shop-item-button">
-	// 				<p >ADD TO CART</p>
-	// 			</div>
-	// 		</div>
-	// 	</div>
-	// 	`;
-	// 	containerShoses.insertAdjacentHTML('beforeend',templteShose);
-	// }
-
-
-	// const handleRenderShose = ()=>{
-	// 	if(shoses){
-	// 		shoses.map(item=>renderItemShose(item))
-	// 	}else{
-	// 		alert('Hệ thống gặp sự cố! Vui lòng thử lại sau!!!')
-	// 	}
-
-	// }
-
-	// handleRenderShose();
-	//end show shose
-
-
-
-	//handle add card
-
 	const containerCart = document.querySelector('.card-items');
 
 
@@ -139,8 +91,6 @@ window.addEventListener('load', function () {
 
 
 		if (id > 0) {
-			//findOneShoseInData(parseInt(id)
-
 			let cart = JSON.parse(localStorage.getItem('cart')) || [];
 			let item = findOneShoseInData(parseInt(id));
 			item.number = 1;
@@ -162,11 +112,6 @@ window.addEventListener('load', function () {
 			
 		}
 	})
-
-
-
-
-	//show cart when load page
 
 	const renderCartLoadPage = () => {
 		let data = JSON.parse(localStorage.getItem('cart')) || [];
@@ -246,11 +191,6 @@ window.addEventListener('load', function () {
 	}
 	handleRenderShoseLoadPage()
 	renderCartLoadPage();
-	//end show cart when load page
-
-
-
-	//incre and decre cart and remove item
 
 	containerCart.addEventListener('click', function (e) {
 		let cart = JSON.parse(localStorage.getItem('cart'));
@@ -273,8 +213,6 @@ window.addEventListener('load', function () {
 
 				}
 			})
-
-
 
 			localStorage.setItem('cart', JSON.stringify(cartNew));
 			calculateSumCart()
@@ -324,7 +262,6 @@ window.addEventListener('load', function () {
 
 				}
 			})
-
 
 			localStorage.setItem('cart', JSON.stringify(cartNew));
 			calculateSumCart()
